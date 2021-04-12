@@ -6,7 +6,9 @@ bool bDoorIsOpen = false;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
-  pinMode(DoorSensorPin, INPUT);
+  pinMode(DoorSensorPin, INPUT_PULLUP);
+
+  delay(100);
 
   Serial.println("Sensor initialized");
 }
@@ -25,7 +27,6 @@ void loop() {
     //door closed
     if(bDoorIsOpen) Serial.println("DoorClosed");
     bDoorIsOpen = false;
-
   }
 
   delay(100);
