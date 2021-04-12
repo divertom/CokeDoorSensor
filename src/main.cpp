@@ -8,9 +8,6 @@ void setup() {
   Serial.begin(9600);
   pinMode(DoorSensorPin, INPUT_PULLUP);
 
-  delay(100);
-
-  Serial.println("Sensor initialized");
 }
 
 void loop() {
@@ -29,6 +26,6 @@ void loop() {
     bDoorIsOpen = false;
   }
 
-  delay(100);
+  delay(20); //debouncing pin
 
 }
